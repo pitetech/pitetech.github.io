@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pitetech — Software &amp; IA</title>
+<meta name="description" content="Pitetech une engenharia de software sólida e inteligência artificial aplicada. Software que aprende.">
+<meta name="theme-color" content="#0B1020">
+<!-- TODO: quando o domínio existir, adicionar og:url, og:image (1200x630) e canonical -->
+<meta property="og:title" content="Pitetech — Software & IA">
+<meta property="og:description" content="Engenharia de software sólida + inteligência artificial aplicada.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B1020; --surface:#111729; --border:#1E2433; --fg:#F5F7FA; --muted:#8A93A6;
+  --accent:#7C5CFF; --accent-soft:rgba(124,92,255,.14); --code-k:#B9A8FF; --code-c:#6B7690; --code-s:#8FE3C0;
+  --font-d:'Space Grotesk',system-ui,sans-serif; --font-b:'Inter',system-ui,sans-serif; --font-m:'JetBrains Mono',ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    --bg:#F5F7FA; --surface:#FFFFFF; --border:#E1E5EE; --fg:#0B1020; --muted:#586179;
+    --accent:#5B3FE0; --accent-soft:rgba(91,63,224,.09); --code-k:#5B3FE0; --code-c:#7C869B; --code-s:#0E7A55;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-b);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--font-d);line-height:1.1;margin:0;letter-spacing:-.02em}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;z-index:20}
+
+/* nav */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--font-d);font-weight:600;font-size:22px;letter-spacing:-.02em}
+.brand svg{width:22px;height:30px}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:15px;color:var(--muted)}
+nav ul a{text-decoration:none}nav ul a:hover{color:var(--fg)}
+@media(max-width:720px){nav ul{display:none}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:500;text-decoration:none;border:1px solid var(--border);transition:transform .15s,border-color .15s,background .15s}
+.btn:hover{transform:translateY(-1px);border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary:hover{filter:brightness(1.08)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* hero */
+.hero{padding:88px 20px 72px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.eyebrow{font-family:var(--font-m);font-size:13px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase}
+.hero h1{font-size:clamp(44px,7vw,84px);margin:16px 0 20px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:34em;margin:0 0 32px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:56px;padding-bottom:48px}}
+
+/* code card */
+.code{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 20px 60px -30px var(--accent)}
+.code .bar{display:flex;gap:7px;padding:12px 14px;border-bottom:1px solid var(--border)}
+.code .bar i{width:10px;height:10px;border-radius:50%;background:var(--border)}
+.code .bar span{margin-left:auto;font:12px var(--font-m);color:var(--muted)}
+.code pre{margin:0;padding:20px;font:14px/1.7 var(--font-m);overflow-x:auto;color:var(--fg)}
+.k{color:var(--code-k)}.c{color:var(--code-c)}.s{color:var(--code-s)}.t{color:var(--accent);font-weight:700}
+
+/* sections */
+section{padding:72px 0;border-top:1px solid var(--border)}
+.sec-head{max-width:640px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(30px,4vw,44px);margin-top:10px}
+.sec-head p{color:var(--muted);font-size:18px;margin:14px 0 0}
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:860px){.g3{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:26px}
+.card h3{font-size:22px;margin:14px 0 8px}
+.card p{margin:0;color:var(--muted)}
+.glyph{font-family:var(--font-d);font-weight:700;font-size:44px;line-height:1;color:var(--accent)}
+.ico{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.ico svg{width:22px;height:22px}
+
+/* stack */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:8px 16px;border:1px solid var(--border);border-radius:999px;background:var(--surface);font-size:15px}
+.chip.hot{border-color:var(--accent);color:var(--accent)}
+
+/* projetos */
+.soon{border:1px dashed var(--border);border-radius:16px;padding:40px;text-align:center;color:var(--muted)}
+.soon strong{display:block;font:600 22px var(--font-d);color:var(--fg);margin-bottom:6px}
+
+/* contato */
+.contact{text-align:center;padding:88px 0}
+.contact h2{font-size:clamp(32px,5vw,56px);margin:10px 0 18px}
+.contact p{color:var(--muted);font-size:18px;max-width:34em;margin:0 auto 30px}
+.cta.center{justify-content:center}
+
+footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="28 16 72 96">
+    <path d="M43.5 57.5H85" stroke="var(--accent)" stroke-width="9" fill="none"/>
+    <ellipse cx="64" cy="57.5" rx="26" ry="32" fill="none" stroke="var(--fg)" stroke-width="11"/>
+    <path d="M38 20V108" stroke="var(--fg)" stroke-width="11" fill="none"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Principal">
+      <a class="brand" href="#top"><svg aria-hidden="true"><use href="#mark"/></svg>pitetech</a>
+      <ul>
+        <li><a href="#nome">O nome</a></li>
+        <li><a href="#servicos">O que fazemos</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap hero" id="top">
+    <div>
+      <div class="eyebrow">Software &amp; IA</div>
+      <h1>Software que <em>aprende.</em></h1>
+      <p class="lead">Engenharia de software sólida e inteligência artificial aplicada. Construímos sistemas que resolvem problemas reais e melhoram com os dados.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contato">Vamos conversar</a>
+        <a class="btn" href="https://github.com/pitetech" rel="noopener">Ver no GitHub</a>
+      </div>
+    </div>
+    <div class="code" aria-label="Exemplo de código em C#">
+      <div class="bar"><i></i><i></i><i></i><span>Hypothesis.cs</span></div>
+<pre><span class="c">// π: a precisão da engenharia</span>
+<span class="c">// θ: o que o modelo aprende</span>
+<span class="k">public record</span> Model(<span class="k">double</span>[] <span class="t">Theta</span>);
+
+<span class="k">static double</span> H(Model m, <span class="k">double</span>[] x)
+    =&gt; m.<span class="t">Theta</span>.Zip(x, (t, v) =&gt; t * v).Sum();</pre>
+    </div>
+  </div>
+
+  <section id="nome">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">O nome</div>
+        <h2>Duas letras gregas e uma ideia.</h2>
+        <p>Pitetech nasce de uma conta simples: a base matemática que sustenta o software mais o aprendizado que o faz evoluir.</p>
+      </div>
+      <div class="grid g3">
+        <div class="card"><div class="glyph">π</div><h3>Precisão</h3><p>A constante que representa a base matemática e o rigor da engenharia: arquitetura limpa, código testável, entregas previsíveis.</p></div>
+        <div class="card"><div class="glyph">θ</div><h3>Aprendizado</h3><p>Em machine learning, θ são os parâmetros que o modelo ajusta ao aprender. Representa refinamento contínuo e inteligência adaptativa.</p></div>
+        <div class="card"><svg style="display:block;width:33px;height:44px" aria-hidden="true"><use href="#mark"/></svg><h3>O símbolo</h3><p>Um “p” de Pitetech cujo bojo é o anel do θ, com o travessão em violeta: a inicial da marca e o símbolo do que aprende.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">O que fazemos</div>
+        <h2>Do back-end ao modelo.</h2>
+        <p>Cuidamos do sistema inteiro, para que a IA funcione dentro de um produto de verdade e não em uma demo.</p>
+      </div>
+      <div class="grid g3">
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div><h3>Sistemas sob medida</h3><p>APIs, back-ends e integrações em C#/.NET, desenhados para evoluir sem virar dívida técnica.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div><h3>IA aplicada</h3><p>LLMs, automação de processos e agentes dentro do seu fluxo de trabalho, com medição de resultado.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></div><h3>Ferramentas abertas</h3><p>Bibliotecas e utilitários publicados no GitHub para a comunidade .NET, em inglês e com documentação.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Stack</div>
+        <h2>Ferramentas que usamos.</h2>
+      </div>
+      <!-- TODO: acrescentar as tecnologias reais (Azure, SQL Server, Python, etc.) -->
+      <div class="chips">
+        <span class="chip hot">C#</span><span class="chip hot">.NET</span><span class="chip hot">IA / LLMs</span>
+        <span class="chip">APIs REST</span><span class="chip">Arquitetura limpa</span><span class="chip">Testes automatizados</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Projetos</div>
+        <h2>Open source.</h2>
+      </div>
+      <!-- TODO: trocar por cards quando houver repositórios públicos em github.com/pitetech -->
+      <div class="soon"><strong>Em breve</strong>Os primeiros projetos abertos chegam ao GitHub. <a href="https://github.com/pitetech" rel="noopener">Acompanhe em github.com/pitetech</a>.</div>
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+    <div class="wrap">
+      <div class="eyebrow">Contato</div>
+      <h2>Tem um problema complexo?</h2>
+      <p>Conte o que você precisa resolver. Respondemos com um caminho claro, do sistema à IA.</p>
+      <!-- TODO: trocar/adicionar o contato público (e-mail do domínio, LinkedIn) quando definido -->
+      <div class="cta center">
+        <a class="btn primary" href="https://github.com/pitetech" rel="noopener">github.com/pitetech</a>
+        <a class="btn" href="https://github.com/pitetechai" rel="noopener">Falar com André “Piteta”</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Pitetech · Software &amp; IA</span>
+    <span>Feito por André “Piteta”</span>
+  </div>
+</footer>
+</body>
+</html>
