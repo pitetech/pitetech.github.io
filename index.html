@@ -101,6 +101,19 @@ section{padding:72px 0;border-top:1px solid var(--border)}
 
 footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+/* whatsapp */
+.btn svg{width:20px;height:20px;flex:none}
+.btn.wa{background:#25D366;border-color:#25D366;color:#06210F;font-weight:600}
+.btn.wa:hover{filter:brightness(1.06);border-color:#25D366}
+.btn.sm{padding:8px 14px;font-size:14px;border-radius:10px}
+.nav-right{display:flex;align-items:center;gap:26px}
+.phone{display:block;margin-top:14px;font-size:15px;color:var(--muted)}
+.phone a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--border)}
+.phone a:hover{border-color:var(--accent)}
+.wa-float{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:15;width:56px;height:56px;border-radius:50%;background:#25D366;color:#06210F;display:grid;place-items:center;box-shadow:0 10px 30px -8px rgba(37,211,102,.55),0 2px 8px rgba(0,0,0,.35);transition:transform .15s}
+.wa-float:hover{transform:scale(1.07)}
+.wa-float svg{width:28px;height:28px}
+@media print{.wa-float{display:none}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -108,6 +121,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <a class="skip" href="#main">Pular para o conteúdo</a>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41"/></symbol>
   <symbol id="mark" viewBox="28 16 72 96">
     <path d="M43.5 57.5H85" stroke="var(--accent)" stroke-width="9" fill="none"/>
     <ellipse cx="64" cy="57.5" rx="26" ry="32" fill="none" stroke="var(--fg)" stroke-width="11"/>
@@ -119,13 +133,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <div class="wrap">
     <nav aria-label="Principal">
       <a class="brand" href="#top"><svg aria-hidden="true"><use href="#mark"/></svg>pitetech</a>
-      <ul>
-        <li><a href="#nome">O nome</a></li>
-        <li><a href="#servicos">O que fazemos</a></li>
-        <li><a href="#stack">Stack</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+      <div class="nav-right">
+        <ul>
+          <li><a href="#nome">O nome</a></li>
+          <li><a href="#servicos">O que fazemos</a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a class="btn wa sm" href="https://wa.me/5511993549702?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Pitetech%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
+      </div>
     </nav>
   </div>
 </header>
@@ -137,7 +154,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <h1>Software que <em>aprende.</em></h1>
       <p class="lead">Engenharia de software sólida e inteligência artificial aplicada. Construímos sistemas que resolvem problemas reais e melhoram com os dados.</p>
       <div class="cta">
-        <a class="btn primary" href="#contato">Vamos conversar</a>
+        <a class="btn wa" href="https://wa.me/5511993549702?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Pitetech%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Conversar no WhatsApp</a>
         <a class="btn" href="https://github.com/pitetech" rel="noopener">Ver no GitHub</a>
       </div>
     </div>
@@ -212,11 +229,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="eyebrow">Contato</div>
       <h2>Tem um problema complexo?</h2>
       <p>Conte o que você precisa resolver. Respondemos com um caminho claro, do sistema à IA.</p>
-      <!-- TODO: trocar/adicionar o contato público (e-mail do domínio, LinkedIn) quando definido -->
+      <!-- TODO: adicionar e-mail do domínio e LinkedIn quando definidos -->
       <div class="cta center">
-        <a class="btn primary" href="https://github.com/pitetech" rel="noopener">github.com/pitetech</a>
-        <a class="btn" href="https://github.com/pitetechai" rel="noopener">Falar com André “Piteta”</a>
+        <a class="btn wa" href="https://wa.me/5511993549702?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Pitetech%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Chamar no WhatsApp</a>
+        <a class="btn" href="https://github.com/pitetech" rel="noopener">github.com/pitetech</a>
       </div>
+      <span class="phone">ou ligue para <a href="tel:+5511993549702">(11) 99354-9702</a></span>
     </div>
   </section>
 </main>
@@ -224,8 +242,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <footer>
   <div class="wrap">
     <span>© 2026 Pitetech · Software &amp; IA</span>
-    <span>Feito por André “Piteta”</span>
+    <span>Feito por André “Piteta” · <a href="https://wa.me/5511993549702" target="_blank" rel="noopener">(11) 99354-9702</a></span>
   </div>
 </footer>
+
+<a class="wa-float" href="https://wa.me/5511993549702?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Pitetech%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener" aria-label="Conversar com a Pitetech no WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
 </body>
 </html>
