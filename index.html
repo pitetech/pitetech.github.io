@@ -192,14 +192,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <a class="btn" href="https://github.com/pitetech" rel="noopener">Ver no GitHub</a>
       </div>
     </div>
-    <div class="code" aria-label="Exemplo de código em C#">
-      <div class="bar"><i></i><i></i><i></i><span>Hypothesis.cs</span></div>
+    <div class="code" aria-label="Exemplo: a hipótese de um modelo de IA">
+      <div class="bar"><i></i><i></i><i></i><span>modelo</span></div>
 <pre><span class="c">// π: a precisão da engenharia</span>
 <span class="c">// θ: o que o modelo aprende</span>
-<span class="k">public record</span> Model(<span class="k">double</span>[] <span class="t">Theta</span>);
+<span class="k">h</span>(x) = <span class="t">θ</span>1·x1 + <span class="t">θ</span>2·x2 + … + <span class="t">θ</span>n·xn
 
-<span class="k">static double</span> H(Model m, <span class="k">double</span>[] x)
-    =&gt; m.<span class="t">Theta</span>.Zip(x, (t, v) =&gt; t * v).Sum();</pre>
+<span class="c">// quanto melhor o θ, mais inteligente o sistema</span></pre>
     </div>
   </div>
 
@@ -239,7 +238,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
       <div class="steps">
         <div class="step"><b>1</b><div><strong>Mapeamos</strong><p>Entendemos a tarefa, quem faz e onde está o desperdício.</p></div></div>
-        <div class="step"><b>2</b><div><strong>Construímos</strong><p>Software sólido em C#/.NET que executa o processo de ponta a ponta.</p></div></div>
+        <div class="step"><b>2</b><div><strong>Construímos</strong><p>Software sólido que executa o processo de ponta a ponta, na tecnologia certa para o seu caso.</p></div></div>
         <div class="step"><b>3</b><div><strong>Automatizamos com IA</strong><p>Modelos nas partes que exigem interpretar, decidir ou redigir.</p></div></div>
       </div>
 
@@ -270,9 +269,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <p>Cuidamos do sistema inteiro, para que a IA funcione dentro de um produto de verdade e não em uma demo.</p>
       </div>
       <div class="grid g3">
-        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div><h3>Sistemas sob medida</h3><p>APIs, back-ends e integrações em C#/.NET, desenhados para evoluir sem virar dívida técnica.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div><h3>Sistemas sob medida</h3><p>APIs, back-ends, front-ends e integrações, na tecnologia que o problema pede, desenhados para evoluir sem virar dívida técnica.</p></div>
         <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div><h3>IA aplicada</h3><p>LLMs, automação de processos e agentes dentro do seu fluxo de trabalho, com medição de resultado.</p></div>
-        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></div><h3>Ferramentas abertas</h3><p>Bibliotecas e utilitários publicados no GitHub para a comunidade .NET, em inglês e com documentação.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></div><h3>Ferramentas abertas</h3><p>Bibliotecas e utilitários publicados no GitHub para a comunidade, em inglês e com documentação.</p></div>
       </div>
     </div>
   </section>
@@ -281,12 +280,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="wrap">
       <div class="sec-head">
         <div class="eyebrow">Stack</div>
-        <h2>Ferramentas que usamos.</h2>
+        <h2>A tecnologia certa para cada caso.</h2>
+        <p>Não amarramos você a uma linguagem. A stack é escolhida pela necessidade do projeto.</p>
       </div>
-      <!-- TODO: acrescentar as tecnologias reais (Azure, SQL Server, Python, etc.) -->
+      <!-- Stack propositalmente neutra: a tecnologia depende da necessidade de cada projeto -->
       <div class="chips">
-        <span class="chip hot">C#</span><span class="chip hot">.NET</span><span class="chip hot">IA / LLMs</span>
-        <span class="chip">APIs REST</span><span class="chip">Arquitetura limpa</span><span class="chip">Testes automatizados</span>
+        <span class="chip hot">IA / LLMs</span><span class="chip hot">Automação de processos</span>
+        <span class="chip">APIs e integrações</span><span class="chip">Web e aplicativos</span><span class="chip">Dados</span><span class="chip">Arquitetura limpa</span><span class="chip">Testes automatizados</span>
       </div>
     </div>
   </section>
