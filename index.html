@@ -134,6 +134,33 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 }
 @keyframes flowv{to{background-position:0 16px}}
 @media(prefers-reduced-motion:reduce){.manual li,.autom li,.line,.core{animation:none!important}}
+/* projeto em destaque: feito pela Pitetech */
+.case{position:relative;overflow:hidden;display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px}
+.case::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--accent),transparent)}
+.made{display:inline-flex;align-items:center;gap:8px;padding:6px 12px 6px 9px;border-radius:999px;background:var(--accent-soft);border:1px solid var(--accent);color:var(--accent);font:600 12px var(--font-m);letter-spacing:.08em;text-transform:uppercase}
+.made svg{width:13px;height:18px}
+.case h3{font-size:clamp(24px,3vw,32px);margin:16px 0 10px}
+.lead2{color:var(--muted);margin:0 0 18px}
+.ticks{list-style:none;margin:0 0 20px;padding:0;display:grid;gap:10px}
+.ticks li{display:flex;gap:10px;align-items:flex-start}
+.ticks .tick{width:20px;height:20px;margin-top:2px}
+.facts{display:flex;gap:6px 22px;flex-wrap:wrap;font-size:14px;color:var(--muted);margin-bottom:22px}
+.facts strong{color:var(--fg);font-weight:600;margin-right:4px}
+.mock{position:relative;min-height:290px;padding-bottom:34px}
+.m-win{background:var(--bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;width:88%}
+.m-bar{display:flex;gap:6px;padding:10px;border-bottom:1px solid var(--border)}
+.m-bar i{width:8px;height:8px;border-radius:50%;background:var(--border)}
+.m-body{padding:16px 16px 60px}
+.m-h{height:14px;width:55%;background:var(--fg);opacity:.85;border-radius:4px;margin-bottom:12px}
+.m-l{height:8px;background:var(--border);border-radius:4px;margin-bottom:8px}.w80{width:80%}.w60{width:60%}
+.m-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.m-cards b{height:56px;border:1px solid var(--border);border-radius:8px;background:var(--surface)}
+.m-panel{position:absolute;right:0;bottom:0;width:66%;background:var(--surface);border:1px solid var(--accent);border-radius:12px;padding:14px;box-shadow:0 20px 50px -20px var(--accent);font-size:13px}
+.m-ptitle{font:600 13px var(--font-d);margin-bottom:6px}
+.m-row{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--border)}
+.m-row u{text-decoration:none;color:var(--accent);font-size:12px;white-space:nowrap}
+.m-2fa{margin-top:10px;display:inline-block;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:12px}
+@media(max-width:860px){.case{grid-template-columns:1fr;gap:28px;padding:22px}.mock{min-height:250px}}
 /* whatsapp */
 .btn svg{width:20px;height:20px;flex:none}
 .btn.wa{background:#25D366;border-color:#25D366;color:#06210F;font-weight:600}
@@ -294,11 +321,43 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <section id="projetos">
     <div class="wrap">
       <div class="sec-head">
-        <div class="eyebrow">Projetos</div>
-        <h2>Open source.</h2>
+        <div class="eyebrow">Projetos entregues</div>
+        <h2>Feito pela Pitetech.</h2>
+        <p>Produtos reais, em produção.</p>
       </div>
-      <!-- TODO: trocar por cards quando houver repositórios públicos em github.com/pitetech -->
-      <div class="soon"><strong>Em breve</strong>Os primeiros projetos abertos chegam ao GitHub. <a href="https://github.com/pitetech" rel="noopener">Acompanhe em github.com/pitetech</a>.</div>
+
+      <!-- Cliente anonimizado de propósito. Para citar o nome e linkar o site, pedir autorização do escritório. -->
+      <article class="case">
+        <div class="mock" role="img" aria-label="Ilustração de um site institucional e do seu painel de administração">
+          <div class="m-win">
+            <div class="m-bar"><i></i><i></i><i></i></div>
+            <div class="m-body">
+              <div class="m-h"></div><div class="m-l w80"></div><div class="m-l w60"></div>
+              <div class="m-cards"><b></b><b></b><b></b></div>
+            </div>
+          </div>
+          <div class="m-panel">
+            <div class="m-ptitle">Painel</div>
+            <div class="m-row"><span>Artigo</span><u>Publicado</u></div>
+            <div class="m-row"><span>Pergunta frequente</span><u>Rascunho</u></div>
+            <span class="m-2fa">✓ Login em 2 etapas</span>
+          </div>
+        </div>
+
+        <div>
+          <span class="made"><svg aria-hidden="true"><use href="#mark"/></svg>Feito pela Pitetech</span>
+          <h3>Site + painel de conteúdo para escritório de advocacia</h3>
+          <p class="lead2">Um site institucional com artigos e perguntas frequentes, e um painel para o próprio advogado publicar, sem depender de programador.</p>
+          <ul class="ticks">
+            <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10 3.4"/></svg></span>Painel com login protegido por verificação em duas etapas</li>
+            <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10 3.4"/></svg></span>Artigos e perguntas editados sem tocar em código</li>
+            <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10 3.4"/></svg></span>SEO automático: metadados, sitemap e páginas de erro corretas</li>
+            <li><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10 3.4"/></svg></span>Monitoramento diário que avisa se o site ou o banco caírem</li>
+          </ul>
+          <div class="facts"><span><strong>Status</strong> Em produção</span><span><strong>Tecnologia</strong> Supabase · Netlify</span></div>
+          <a class="btn wa" href="https://wa.me/5511993549702?text=Ol%C3%A1!%20Vi%20o%20projeto%20do%20escrit%C3%B3rio%20de%20advocacia%20no%20site%20da%20Pitetech%20e%20quero%20algo%20parecido." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Quero um projeto assim</a>
+        </div>
+      </article>
     </div>
   </section>
 
